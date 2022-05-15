@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]private InfoToPass infoToPass;
     [Header("Volume settings")] 
     [SerializeField] private TMP_Text VolumeValue = null;
     [SerializeField] private Slider VolumeSlider = null;
@@ -112,4 +114,20 @@ public class MainMenu : MonoBehaviour
                 break;
         }
     }
+    
+    public void SaveCarP1(int carIndex)
+    {
+        infoToPass.carP1 = carIndex;
+    }
+    
+    public void SaveCarP2(int carIndex)
+    {
+        infoToPass.carP2 = carIndex;
+    }
+    
+    public void SaveNbPlayers(int nbPlayers)
+    {
+        infoToPass.nbPlayers = nbPlayers;
+    }
+    
 }

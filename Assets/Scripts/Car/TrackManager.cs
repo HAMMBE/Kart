@@ -74,6 +74,7 @@ TrackManager : MonoBehaviour
             {
                 if (currentLap >= other.GetComponent<FinishLine>().maxLap)
                 {
+                    GameObject.Find("PlayerManager").GetComponent<PlayersManager>().PlayerFinished(gameObject);
                     //Destroy(gameObject);
                     Debug.Log("Finish");
                     UpdateLapUI();
