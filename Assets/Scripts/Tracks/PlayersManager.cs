@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayersManager : MonoBehaviour
 {
@@ -26,12 +29,31 @@ public class PlayersManager : MonoBehaviour
 
     public void PlayerFinished(GameObject player)
     {
+        if (playersFinished.Contains(player))
+        {
+            Debug.Log("Player already finished");
+            return;
+        }
+
         playersFinished.Add(player);
         if (playersFinished.Count == playersCount)
         {
-            //GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
+            GameObject endScreen = GameObject.FindGameObjectWithTag("Finish").transform.GetChild(0).gameObject;
+            endScreen.SetActive(true);
+            TextMeshProUGUI text = endScreen.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            int i = 0;
+            foreach (var p in playersFinished)
+            {
+                i++;
+                text.text +=  "\n" + i + ". " + p.name;
+            }
+            
             Debug.Log("Tous les joueurs ont fini");
         }
+    }
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene("Menu/Assets/Scenes/Menu/MainMenu");
     }
     // Update is called once per frame
     void Update()

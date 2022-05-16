@@ -9,11 +9,11 @@ public class
 TrackManager : MonoBehaviour
 
 {
-    public int currentCheckpoint;
-    public int currentLap;
-    public int nbCheckpoints;
-    public Checkpoint lastCheckpoint;
-    public int nbLaps;
+    private int currentCheckpoint;
+    private int currentLap;
+    private int nbCheckpoints;
+    private Checkpoint lastCheckpoint;
+    private int nbLaps;
 
     public GameObject lapCounterDisplay;
     // Start is called before the first frame update

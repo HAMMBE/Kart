@@ -23,7 +23,6 @@ public class BoxManager : MonoBehaviour
     {
         if (invisible)
         {
-            //Debug.Log(elapsedTime);
             if (elapsedTime <= 1000.0)
             {
                 elapsedTime += 1;
