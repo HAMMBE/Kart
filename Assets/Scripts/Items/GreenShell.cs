@@ -54,7 +54,6 @@ public class GreenShell : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(nbBonce);
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -69,10 +68,8 @@ public class GreenShell : MonoBehaviour
             }
             
             nbBonce--;
-            Debug.Log(nbBonce);
             if (nbBonce < 1)
             {
-                Debug.Log("GreenShell Deleted");
                 Destroy(gameObject);
             } 
         }

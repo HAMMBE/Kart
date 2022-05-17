@@ -12,10 +12,4 @@ public class Checkpoint : MonoBehaviour
     {
         text.text = "" + checkpointNumber;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

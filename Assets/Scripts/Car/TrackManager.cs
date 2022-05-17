@@ -31,13 +31,6 @@ TrackManager : MonoBehaviour
         
         UpdateLapUI();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnRespawn(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -63,11 +56,6 @@ TrackManager : MonoBehaviour
                     lastCheckpoint = checkpointTrigger;
                     currentCheckpoint++;
             }
-            else
-            {
-                Debug.Log("Checkpoint error");
-            }
-            
         }else if (other.CompareTag("FinishLine"))
         {
             if (currentCheckpoint == nbCheckpoints)
@@ -75,21 +63,14 @@ TrackManager : MonoBehaviour
                 if (currentLap >= other.GetComponent<FinishLine>().maxLap)
                 {
                     GameObject.Find("PlayerManager").GetComponent<PlayersManager>().PlayerFinished(gameObject);
-                    //Destroy(gameObject);
-                    Debug.Log("Finish");
                     UpdateLapUI();
                 }
                 else
                 {
-                    Debug.Log("Lap");
                     currentLap++;
                     currentCheckpoint = 0;
                     UpdateLapUI();
                 }
-            }
-            else
-            {
-                Debug.Log("T'as raté un checkpoint frerot");
             }
         }
     }

@@ -38,14 +38,8 @@ public class ItemManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("No item");
             }
         }
-    }
-
-    private void FixedUpdate()
-    {
-
     }
 
     public void UpdateUI()

@@ -15,7 +15,7 @@ public class PlayersManager : MonoBehaviour
     
     [SerializeField]
     private List<GameObject> playersFinished;
-    // Start is called before the first frame update
+
     void Start()
     {
         players = new List<GameObject>();
@@ -31,7 +31,6 @@ public class PlayersManager : MonoBehaviour
     {
         if (playersFinished.Contains(player))
         {
-            Debug.Log("Player already finished");
             return;
         }
 
@@ -47,17 +46,10 @@ public class PlayersManager : MonoBehaviour
                 i++;
                 text.text +=  "\n" + i + ". " + p.name;
             }
-            
-            Debug.Log("Tous les joueurs ont fini");
         }
     }
     public void returnToMenu()
     {
         SceneManager.LoadScene("Menu/Assets/Scenes/Menu/MainMenu");
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

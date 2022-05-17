@@ -23,11 +23,5 @@ public class SpawnManager : MonoBehaviour
             car2.name = "Player 2";
         }
         GetComponent<PlayersManager>().CountPlayers();
-    }   
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -12,15 +12,12 @@ public class CarController : MonoBehaviour {
     public float maxSteeringAngle; // maximum steer angle the wheel can have
     private Rigidbody rb;
     public float maxSpeed;
-    public float breakForce;
+    private float breakForce;
     private bool handBreak;
-    public CharacterController controller;
     private Vector2 movementInput = Vector2.zero;
-
-
+    
     public void Start()
     {
-        //controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         breakForce = Mathf.Infinity;
         handBreak = false;
@@ -30,18 +27,19 @@ public class CarController : MonoBehaviour {
         AlignToRoad();
     }
 
+    //Get the input of the car
     public void OnMove(InputAction.CallbackContext context)
     {
-        
         movementInput = context.ReadValue<Vector2>();
-        //Debug.Log(movementInput);
     }
 
+    //Get if the brake is triggered
     public void OnBrake(InputAction.CallbackContext context)
     {
         handBreak = context.action.triggered;
     }
 
+    //Move the car
     public void FixedUpdate()
     {
         float motor = maxMotorTorque * movementInput.y;
@@ -87,6 +85,8 @@ public class CarController : MonoBehaviour {
         }
     }
     
+    
+    //Aligns the car to the road
     private void AlignToRoad()
         {
             Transform t = transform;

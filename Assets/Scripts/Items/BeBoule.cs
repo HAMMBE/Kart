@@ -12,8 +12,6 @@ public class BeBoule : IObject
 
     public override void Execute(GameObject gameO)
     {
-        Debug.Log("J'envoie PowerUp");
-        
         go = Instantiate(greenShellPrefab,gameO.transform.GetChild(2).transform.position, gameO.transform.GetChild(2).transform.rotation); 
         carRbVel = gameO.GetComponent<Rigidbody>().velocity;
         go.GetComponent<Rigidbody>().AddForce(carRbVel*1.10f, ForceMode.VelocityChange);

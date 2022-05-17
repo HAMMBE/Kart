@@ -56,7 +56,6 @@ public class BoxManager : MonoBehaviour
 
     public void setInvisible()
     {
-        Debug.Log("JE SUIS ENTRER");
         render.enabled = false;
         invisible = true;  
     }
