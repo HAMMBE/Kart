@@ -25,7 +25,7 @@ public class GreenShell : MonoBehaviour
     private void FixedUpdate()
     {
         float speed = Vector3.Dot(rb.velocity, transform.forward);
-        float propulsion = 17f - 1.7f * Mathf.Clamp(speed, 50f, 100f);
+        float propulsion = 17f - 1.7f * Mathf.Clamp(speed, 50f, 1000f);
         RaycastHit groundHit;
 
         if (Physics.Raycast(transform.position, -transform.up, out groundHit, 1f))
@@ -49,7 +49,6 @@ public class GreenShell : MonoBehaviour
             
             rb.AddForce(gravity, ForceMode.Acceleration);
         }
-        rb.AddForce(transform.forward * propulsion, ForceMode.Acceleration);
     }
     
 

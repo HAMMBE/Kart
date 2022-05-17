@@ -129,5 +129,5 @@ public class MainMenu : MonoBehaviour
     {
         infoToPass.nbPlayers = nbPlayers;
     }
-    
+
 }

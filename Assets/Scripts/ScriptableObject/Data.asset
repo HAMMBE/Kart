@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73981ec06cecb8640883fd719a21c424, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  nbPlayers: 1
+  nbPlayers: 2
   carP1: 1
   carP2: 0
+  playersCars: 0000000001000000

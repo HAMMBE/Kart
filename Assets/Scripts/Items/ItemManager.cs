@@ -9,7 +9,6 @@ public class ItemManager : MonoBehaviour
 {
     public bool haveItem;
     public IObject itemHolding;
-    private bool toSend;
     public GameObject itemUI;
     
 
@@ -17,7 +16,6 @@ public class ItemManager : MonoBehaviour
     void Start()
     {
         haveItem = false;
-        toSend = false;
         UpdateUI();
     }
 
@@ -29,19 +27,13 @@ public class ItemManager : MonoBehaviour
 
     public void SendItem(InputAction.CallbackContext context)
     {
-        toSend = context.action.triggered;
-    }
-
-    private void FixedUpdate()
-    {
-        if (toSend)
+        if (context.action.triggered)
         {
             if (haveItem)
             {
                 itemHolding.Execute(gameObject);
                 haveItem = false;
                 itemHolding = null;
-                toSend = false;
                 UpdateUI();
             }
             else
@@ -49,6 +41,11 @@ public class ItemManager : MonoBehaviour
                 Debug.Log("No item");
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 
     public void UpdateUI()

@@ -43,9 +43,12 @@ public class BoxManager : MonoBehaviour
             if (!invisible)
             {
                 ItemManager itemManager = other.GetComponent<ItemManager>();
-                itemManager.itemHolding = getRandomItem();
-                itemManager.haveItem = true;
-                itemManager.UpdateUI();
+                if (itemManager.haveItem == false)
+                {
+                    itemManager.itemHolding = getRandomItem();
+                    itemManager.haveItem = true;
+                    itemManager.UpdateUI();
+                }
                 setInvisible();
             }
         }

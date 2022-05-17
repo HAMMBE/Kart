@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9643b73b84bca674cb0b09b386a13f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbBonce: 1
+  nbBonce: 7
 --- !u!23 &2337886
 MeshRenderer:
   m_ObjectHideFlags: 0

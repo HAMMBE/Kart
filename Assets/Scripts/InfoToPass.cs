@@ -6,6 +6,6 @@ using UnityEngine;
 public class InfoToPass : ScriptableObject
 {
     public int nbPlayers = -1;
-    public int carP1 = -1;
+    public int carP1 = -1;  
     public int carP2 = -1;
 }
