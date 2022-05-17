@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     public int checkpointNumber;
     public TextMesh text;
     
+    //Show the number of the checkpoint
     void Start()
     {
         text.text = "" + checkpointNumber;

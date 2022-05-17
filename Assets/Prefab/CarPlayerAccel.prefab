@@ -401,8 +401,6 @@ MonoBehaviour:
   maxMotorTorque: 650
   maxSteeringAngle: 30
   maxSpeed: 30
-  breakForce: 0
-  controller: {fileID: 0}
 --- !u!114 &5563640634847786676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +518,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a1116b6d-1c28-46e0-b64a-049f144c2caf
     m_ActionName: Player/Respawn[/Keyboard/r,/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5563640634847786680}
+        m_TargetAssemblyTypeName: CarController, Assembly-CSharp
+        m_MethodName: OnOptionMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aa76a0ad-9e31-4535-a455-2614fd89bd44
+    m_ActionName: Player/MenuOption[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -1248,7 +1262,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

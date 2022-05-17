@@ -24,6 +24,7 @@ public class GreenShell : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Function to get the shell to hover
         float speed = Vector3.Dot(rb.velocity, transform.forward);
         float propulsion = 17f - 1.7f * Mathf.Clamp(speed, 50f, 1000f);
         RaycastHit groundHit;

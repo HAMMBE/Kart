@@ -19,12 +19,6 @@ public class ItemManager : MonoBehaviour
         UpdateUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SendItem(InputAction.CallbackContext context)
     {
         if (context.action.triggered)
@@ -35,9 +29,6 @@ public class ItemManager : MonoBehaviour
                 haveItem = false;
                 itemHolding = null;
                 UpdateUI();
-            }
-            else
-            {
             }
         }
     }

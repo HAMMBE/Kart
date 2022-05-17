@@ -5174,7 +5174,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1202748911}
+      - m_Target: {fileID: 947773348}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11417,7 +11417,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\n\nProject made by \nBenjamin HAMM \n&\n Brice WEBER\n\nWith the help
-    of : leo SEGUIN\n\nBETA Testing by Amine MERSEL\n\nMenu Music : Comfy Vibes By
+    of leo SEGUIN\n\nBETA Testing by Amine MERSEL\n\nMenu Music : Comfy Vibes By
     LilyPichu\n\nMusic In Game : Foreverland By LilyPichu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb059786da0794b758d940a7b607fa0a, type: 2}

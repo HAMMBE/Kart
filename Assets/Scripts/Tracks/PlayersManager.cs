@@ -48,7 +48,7 @@ public class PlayersManager : MonoBehaviour
             }
         }
     }
-    public void returnToMenu()
+    public void ReturnToMenu()
     {
         SceneManager.LoadScene("Menu/Assets/Scenes/Menu/MainMenu");
     }

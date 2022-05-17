@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine.InputSystem;
 
-//[RequireComponent(typeof(CharacterController))]
 public class CarController : MonoBehaviour {
     public List<AxleInfo> axleInfos; // the information about each individual axle
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
@@ -15,12 +14,14 @@ public class CarController : MonoBehaviour {
     private float breakForce;
     private bool handBreak;
     private Vector2 movementInput = Vector2.zero;
+    private GameObject optionMenuUI;
     
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
         breakForce = Mathf.Infinity;
         handBreak = false;
+        optionMenuUI = GameObject.Find("OptionMenu");
     }
     
     public void Update(){
@@ -32,6 +33,7 @@ public class CarController : MonoBehaviour {
     {
         movementInput = context.ReadValue<Vector2>();
     }
+    
 
     //Get if the brake is triggered
     public void OnBrake(InputAction.CallbackContext context)
@@ -39,13 +41,28 @@ public class CarController : MonoBehaviour {
         handBreak = context.action.triggered;
     }
 
+    public void OnOptionMenu(InputAction.CallbackContext context)
+    {
+        if (context.action.triggered)
+        {
+            if(optionMenuUI.transform.GetChild(0).gameObject.activeSelf)
+            {
+                optionMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            else
+            {
+                optionMenuUI.transform.GetChild(0).gameObject.SetActive(true);
+            }
+        }
+    }
+
+
     //Move the car
     public void FixedUpdate()
     {
         float motor = maxMotorTorque * movementInput.y;
         float steering = maxSteeringAngle * movementInput.x;
-        //handBreak = Input.GetKey(KeyCode.Space);
-            
+
         foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
                 axleInfo.leftWheel.steerAngle = steering;
@@ -54,7 +71,6 @@ public class CarController : MonoBehaviour {
             float speed = rb.velocity.magnitude;
             if (speed < maxSpeed)
             {
-                //Debug.Log(speed);
                 if (axleInfo.motor)
                 {
                     axleInfo.leftWheel.motorTorque = motor;

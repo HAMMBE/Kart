@@ -45,22 +45,22 @@ public class BoxManager : MonoBehaviour
                 ItemManager itemManager = other.GetComponent<ItemManager>();
                 if (itemManager.haveItem == false)
                 {
-                    itemManager.itemHolding = getRandomItem();
+                    itemManager.itemHolding = GetRandomItem();
                     itemManager.haveItem = true;
                     itemManager.UpdateUI();
                 }
-                setInvisible();
+                SetInvisible();
             }
         }
     }
 
-    public void setInvisible()
+    public void SetInvisible()
     {
         render.enabled = false;
         invisible = true;  
     }
     
-    public IObject getRandomItem()
+    public IObject GetRandomItem()
     {
         System.Random rand = new System.Random();
         return allItems2[rand.Next(0, allItems2.Count)];    

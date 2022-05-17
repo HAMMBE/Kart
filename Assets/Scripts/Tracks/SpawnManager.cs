@@ -22,6 +22,7 @@ public class SpawnManager : MonoBehaviour
             car2.transform.GetChild(0).GetComponent<AudioListener>().enabled = false;
             car2.name = "Player 2";
         }
+        //Once all player have spawn we can count them for the PlayerManger script
         GetComponent<PlayersManager>().CountPlayers();
     }
 }
